@@ -272,10 +272,13 @@ fetch("https://jsonplaceholder.typicode.com/users/1")
 //create,Read, Update,delete
 //GET , POST, PUT,PATCH DELETE
 
-try {
-  const data = '{"product": "Date", "price": 450}';
-  const dataResult = JSON.parse(data);
-  console.log(dataResult);
-} catch (error) {
-  console.log("Invalid JSON format");
+function testJSONParsing(input) {
+  try {
+    const dataResult = JSON.parse(input);
+    console.log("Parsed Data:", dataResult);
+  } catch (error) {
+    console.log("Invalid JSON format");
+  }
 }
+testJSONParsing('{"product": "Date", "price": 450}');
+testJSONParsing("Data corrupted");

@@ -300,3 +300,88 @@ function threedividedSum(number) {
 }
 
 console.log(threedividedSum([2, 3, 5, 7, 9, 32, 41]));
+
+function objcre(obj = { principal: 1000, rate: 5 }) {
+  return (obj.principal * obj.rate) / 100;
+}
+console.log(objcre());
+console.log(objcre({ principal: 2000, rate: 10 }));
+
+function salaryobj(obj = { salary: 50000, tax: 10 }) {
+  let tax = (obj.salary * obj.tax) / 100;
+  let mainsal = obj.salary - tax;
+  return mainsal;
+}
+console.log(salaryobj());
+console.log(salaryobj({ salary: 70000, tax: 20 }));
+
+//practice start from 1
+
+function showDivision(num1, num2) {
+  return `The substraction of ${num1} by ${num2} is ${num1 - num2}`;
+}
+
+console.log(showDivision(200, 20));
+
+let employee = {
+  name: "Test",
+  age: 29,
+  salary: 10000,
+};
+console.log(
+  `emplyee information name:${employee.name},age:${employee.age},salary:${employee.salary}`
+);
+
+let arr = ["MAngo", "JackFruits", " Banana", "Pine Apple", "Gouva"];
+console.log(`third Number fruits is:${arr[3]}`);
+
+const a = 50;
+const b = 10;
+console.log(`The division of a  and b is: ${a / b}`);
+
+const person = { firstName: "Amit", lastName: "Kumar" };
+console.log(`Full Name:${person.firstName} ${person.lastName}`);
+
+let animals = ["Cat", "Dog", "Elephant"];
+console.log(`My Favorite animals are: ${animals}`);
+
+let student = {
+  name: "Rahim",
+  age: 25,
+  result: [82, 80, 85],
+};
+const average = (student.result[0] + student.result[1] + student.result[2]) / 3;
+console.log(`Student Name: ${student.name}`);
+console.log(`Average Result: ${average.toFixed(2)}`);
+
+//arrow function
+
+const array = [10, 20, 30, 40, 50];
+const getFirstIndexValue = (arr) => arr[0];
+console.log(getFirstIndexValue(array));
+
+const multiTgreeValue = (a, b, c) => a * b * c;
+const result = multiTgreeValue(2, 3, 4);
+console.log(result);
+
+const unknown = () => "Unknown";
+const re = unknown();
+console.log(re);
+
+let information = {
+  name: "Rabbi",
+  Money: 200,
+};
+
+const divMoney = (obj, divisor) => obj.Money / divisor;
+const result1 = divMoney(information, 5);
+console.log(result1);
+
+const array1 = [10, 20, 30, 40, 50];
+const sumFirstLast = (arr) => arr[0] + arr[arr.length - 1];
+const result2 = sumFirstLast(array1);
+console.log(result);
+
+const addfunction = (a = 10, b = 5) => a + b;
+const result3 = addfunction(20, 20);
+console.log(result3);
