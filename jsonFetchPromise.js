@@ -282,3 +282,109 @@ function testJSONParsing(input) {
 }
 testJSONParsing('{"product": "Date", "price": 450}');
 testJSONParsing("Data corrupted");
+
+function validInput(str) {
+  if (!str.includes("@")) {
+    console.log("Invalid Email Format");
+  } else {
+    console.log("Valid Email");
+  }
+}
+
+validInput("test@example.com");
+
+try {
+  const data = JSON.parse("{role:'CEO',weeklyHours:1000}");
+} catch (error) {
+  console.log("Week is Over");
+}
+
+function stringOnlyParser(input) {
+  if (input === null || input === undefined || input === "") {
+    console.log("Input Must be String");
+  } else {
+    console.log("Valid Input:", input);
+  }
+}
+stringOnlyParser("");
+
+try {
+  console.log("Deleting Account");
+  throw new Error("Server error");
+} catch (error) {
+  console.log("Failed to deleted Account");
+} finally {
+  console.log("Account deleteion Finished");
+}
+
+//We use async / await to handle asynchronous operations (like fetching data from a server)
+//Callback Hell happens when you write many nested callback functions, especially in asynchronous code like reading files, fetching data, etc
+
+async function fetchComments() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchComments();
+
+async function fetchUserPosts() {
+  try {
+    const res = await fetch(
+      "https://jsonplaceholder.typicode.com/posts?userId=1"
+    );
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchUserPosts();
+
+async function fetchUserById() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users/2");
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchUserById();
+
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Step 1");
+    setTimeout(() => {
+      console.log("Step 2");
+      setTimeout(() => {
+        console.log("Step 3");
+        callback();
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}
+
+fetchData(() => {
+  console.log("All done!");
+});
+
+async function fetchWithFinally() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  } finally {
+    console.log("Request complete!");
+  }
+}
+
+fetchWithFinally();
