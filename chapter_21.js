@@ -134,6 +134,50 @@ console.log(myShopping.getTotalPrice());
 //Inheritance is a fundamental concept in OOP that allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass). This promotes code reusability and establishes a hierarchical relationship between classes.
 //Inheritance promotes clean, reusable, and modular code by allowing classes to share and extend behavior. Use it wisely to avoid unnecessary complexity.
 
-class Bus {}
-class Truck {}
-class Bike {}
+class Vehicle {
+  constructor(wheels, fuelType) {
+    this.wheels = wheels;
+    this.fuelType = fuelType;
+  }
+}
+
+class Bus extends Vehicle {
+  constructor(wheels, fuelType, passengerCapacity, numberOfDoors, hasAC) {
+    super(wheels, fuelType);
+    this.passengerCapacity = passengerCapacity;
+    this.numberOfDoors = numberOfDoors;
+    this.hasAC = hasAC;
+  }
+
+}
+
+class Truck extends Vehicle {
+  constructor(wheels, fuelType, loadCapacity, cargoType, numberOfGears) {
+    super(wheels, fuelType);
+    this.loadCapacity = loadCapacity;
+    this.cargoType = cargoType;
+    this.numberOfGears = numberOfGears;
+  }
+}
+
+class Bike extends Vehicle {
+  constructor(wheels, fuelType, hasHelmetStorage, isGeared, hasDiscBrake) {
+    super(wheels, fuelType);
+    this.hasHelmetStorage = hasHelmetStorage;
+    this.isGeared = isGeared;
+    this.hasDiscBrake = hasDiscBrake;
+  }
+
+}
+
+
+const bus = new Bus(6, "Diesel", 50, 2, true);
+const truck = new Truck(8, "Diesel", 15000, "Construction Materials", 6);
+const bike = new Bike(2, "Petrol", true, true, true);
+
+console.log(bus)
+console.log(truck)
+console.log(bike)
+
+
+
