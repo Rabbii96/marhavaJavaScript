@@ -181,3 +181,160 @@ console.log(bike)
 
 
 
+class Animal {
+  constructor(name, habitat, lifespan, isVertebrate, diet) {
+    this.name = name;
+    this.habitat = habitat;
+    this.lifespan = lifespan;
+    this.isVertebrate = isVertebrate;
+    this.diet = diet;
+  }
+}
+class Bird extends Animal {
+  constructor(name, habitat, lifespan, isVertebrate, diet, canFly, wingspan, beakType, isMigratory, eggColor) {
+    super(name, habitat, lifespan, isVertebrate, diet);
+    this.canFly = canFly;
+    this.wingspan = wingspan;
+    this.beakType = beakType;
+    this.eggColor = eggColor;
+  }
+
+}
+class Fish extends Animal {
+  constructor(name, habitat, lifespan, isVertebrate, diet, waterType, gillCount, hasScales, canBreatheAir, finType) {
+    super(name, habitat, lifespan, isVertebrate, diet);
+    this.waterType = waterType;
+    this.gillCount = gillCount;
+    this.hasScales = hasScales;
+    this.canBreatheAir = canBreatheAir;
+    this.finType = finType;
+  }
+
+}
+const animel = new Animal("Tiger", "Jungle", 15, true, "Carnivore");
+const bird = new Bird("Eagle", "Mountains", 20, true, "Carnivore", true, 2.3, "Hooked", true, "White");
+const fish = new Fish("Salmon", "Rivers", 5, true, "Omnivore", "Freshwater", 4, true, false, "Dorsal");
+
+console.log(animel)
+console.log(bird)
+console.log(fish)
+
+
+class Furniture {
+  constructor(material, color, height, width, depth, price, weight) {
+    this.material = material;
+    this.color = color;
+    this.height = height;
+    this.width = width;
+    this.depth = depth;
+    this.price = price;
+    this.weight = weight;
+  }
+}
+class Chair extends Furniture {
+  constructor(
+    material, color, height, width, depth, price, weight,
+    hasArmrests, isFoldable, cushionType, maxWeightCapacity, isWheeled
+  ) {
+    super(material, color, height, width, depth, price, weight);
+    this.hasArmrests = hasArmrests;
+    this.isFoldable = isFoldable;
+    this.cushionType = cushionType;
+    this.maxWeightCapacity = maxWeightCapacity;
+    this.isWheeled = isWheeled;
+  }
+
+}
+class Table extends Furniture {
+  constructor(
+    material, color, height, width, depth, price, weight,
+    shape, isExtendable, numberOfLegs, isOutdoor, surfaceType
+  ) {
+    super(material, color, height, width, depth, price, weight);
+    this.shape = shape;
+    this.isExtendable = isExtendable;
+    this.numberOfLegs = numberOfLegs;
+    this.isOutdoor = isOutdoor;
+    this.surfaceType = surfaceType;
+  }
+
+}
+const chair = new Chair(
+  "metal", "black", 90, 60, 60, 120, 15,
+  true, false, "mesh", 150, true
+);
+const table = new Table(
+  "wood", "brown", 75, 180, 90, 350, 50,
+  "rectangular", true, 4, false, "glossy"
+);
+const furniture = new Furniture("wood", "brown", 100, 80, 40, 200, 25);
+console.log(chair);
+console.log(table);
+console.log(furniture)
+
+class Pet {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+
+}
+
+
+class Dog extends Pet {
+  constructor(name, age, color, breed, isTrained) {
+    super(name, age, color);
+    this.breed = breed;
+    this.isTrained = isTrained;
+  }
+
+}
+
+class Cat extends Pet {
+  constructor(name, age, color, eyeColor, isIndoor) {
+    super(name, age, color);
+    this.eyeColor = eyeColor;
+    this.isIndoor = isIndoor;
+  }
+
+}
+
+
+class Parrot extends Pet {
+  constructor(name, age, color, canTalk, wingSpan) {
+    super(name, age, color);
+    this.canTalk = canTalk;
+    this.wingSpan = wingSpan;
+  }
+
+}
+
+const dog = new Dog("Bruno", 4, "Brown", "Labrador", true);
+const cat = new Cat("Misty", 2, "White", "Green", true);
+const parrot = new Parrot("Polly", 1, "Green", true, "30cm");
+
+console.log(dog)
+console.log(cat)
+console.log(parrot)
+
+
+//DRY  is a software development principle that emphasizes avoiding duplication of code or logic. Instead, reuse code through functions, classes, or modules to improve maintainability and reduce errors.
+
+
+//inheritance primarily works through the prototype chain. When an object is created, it has an internal link to another object called its prototype.
+//Prototypal inheritance is a JavaScript feature where an object inherits properties and methods from another object (its prototype).
+
+
+const person = {
+  name: "John Doe"
+};
+
+console.log(Object.getPrototypeOf(person));
+console.log(person.toString());
+
+const student = {
+  name: "Alice",
+  id: 123
+};
+console.log(student.toString());
